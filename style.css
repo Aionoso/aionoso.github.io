@@ -770,7 +770,7 @@ span.impressum_title {
   height: 10.9%;
   left: 33.9%;
   top: 33.9%;
-
+  text-align: center;
   font-family: Abril Fatface;
   font-size: 6rem;
 }
