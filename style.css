@@ -1,0 +1,950 @@
+:root {
+  font-size: 16px;
+  font-family: 'Open Sans';
+  --text-primary: #ffffff;
+  --text-secondary: #ececec;
+  --bg-primary: #121215;
+  --bg-secondary: #141418;
+  --transition-speed: 600ms;
+}
+
+body {
+  color: black;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+body::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: #1e1e24;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #6649b8;
+}
+
+main {
+  margin-left: 5rem;
+}
+
+div.nav {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 100
+}
+
+.navbar {
+  position: fixed;
+  background-color: var(--bg-primary);
+  transition: width 600ms ease;
+  overflow: hidden;
+}
+
+.navbar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-item {
+  width: 100%;
+}
+
+.nav-item:last-child {
+  margin-top: auto;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  filter: grayscale(100%) opacity(0.7);
+  transition: var(--transition-speed);
+}
+
+.nav-link:hover {
+  filter: grayscale(0%) opacity(1);
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+}
+
+.link-text {
+  display: none;
+  margin-left: 1rem;
+  font-size: x-large;
+}
+
+.logo-menu {
+  min-width: 2rem;
+  margin: auto;
+  font-size: small;
+}
+
+.fa-primary {
+  color: #ff7eee;
+}
+
+.fa-secondary {
+  color: #df49a6;
+}
+
+.fa-primary,
+.fa-secondary {
+  transition: var(--transition-speed);
+}
+
+.logo {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  font-size: 1.5rem;
+  letter-spacing: 0.3ch;
+  width: 100%;
+}
+.logo-text
+{
+  display: inline;
+  position: absolute;
+  left: -999px;
+  transition: var(--transition-speed);
+}
+
+.navbar:hover .logo-menu {
+  opacity: 0
+}
+
+/* Small screens */
+@media screen and (max-width: 900px) {
+  .navbar {
+    bottom: 0;
+    width: 100vw;
+    height: 5rem;
+    overflow: hidden;
+  }
+
+  .logo-menu {
+    display: block;
+  }
+
+  .navbar-nav {
+    flex-direction: row;
+    align-items: start;
+  }
+
+  .nav-link {
+    justify-content: center;
+  }
+
+  main {
+    margin: 0;
+  }
+}
+
+/* Large screens */
+@media only screen and (min-width: 900px) {
+  .navbar {
+    top: 0;
+    width: 5rem;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .navbar:hover {
+    width: 16rem;
+  }
+
+  .navbar:hover .link-text {
+    display: inline;
+  }
+
+  .navbar:hover .logo svg {
+    margin-left: 11rem;
+  }
+
+  .navbar:hover .logo-text {
+    left: 0px;
+  }
+}
+
+.dark {
+  --text-primary: #b6b6b6;
+  --text-secondary: #ececec;
+  --bg-primary: #23232e;
+  --bg-secondary: #141418;
+}
+
+.light {
+  --text-primary: #1f1f1f;
+  --text-secondary: #000000;
+  --bg-primary: #ffffff;
+  --bg-secondary: #e4e4e4;
+}
+
+.solar {
+  --text-primary: #576e75;
+  --text-secondary: #35535c;
+  --bg-primary: #fdf6e3;
+  --bg-secondary: #f5e5b8;
+}
+
+.theme-icon {
+  display: none;
+}
+
+.dark #darkIcon {
+  display: block;
+}
+
+.light #lightIcon {
+  display: block;
+}
+
+.solar #solarIcon {
+  display: block;
+}
+
+.home_back {
+  background-position: center;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: contain;
+  background-image: url('img/sky.png');
+}
+
+.map_back {
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  background-image: url('img/raum-s.png');
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+a.round {
+  border-radius: 50%;
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #5A8FA9;
+  color: white;
+}
+
+a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+footer {
+  margin-left: 46vw;
+  margin-right: 46vw;
+  position: fixed;
+  bottom: 0;
+  width: 8vw;
+}
+
+a.enter_tour {
+  text-decoration: none;
+  display: inline-block;
+}
+
+a.enter_tour:hover {
+  background-color: #23232e;
+}
+
+h1.home_title {
+  position: fixed;
+  width: 44.2%;
+  height: 23.6%;
+  left: 33.8%;
+  top: 15%;
+
+  font-family: 'Unica One';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 72px;
+  line-height: 85px;
+
+  color: #FCF8F8;
+}
+
+section.home_side_text {
+  padding: 1rem;
+  position: fixed;
+  width: 16.5%;
+  height: 100%;
+  top: 0;
+  left: 78%;
+  font-family: 'IBM Plex Mono', monospace;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 26px;
+  color: #111111;
+}
+
+p.home_text {
+  position: absolute;
+  width: 39.8%;
+  height: 30%;
+  left: 33.8%;
+  top: 45.8%;
+
+  font-family: IBM Plex Mono, monospace;
+  font-size: 2rem;
+  color: #fff
+}
+
+
+section.project_1_background {
+  background-image: url('img/kunst/sky.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+}
+
+article {
+  background-color: #ffffff
+}
+
+article.project_1_article {
+  position: absolute;
+  width: 30%;
+  height: 86%;
+  left: 7.8%;
+  top: 5%;
+
+  padding: 1.5rem;
+  background: #FFFFFF;
+}
+
+span.project_1_title {
+  font-family: 'Abril Fatface';
+  font-size: 5rem;
+}
+
+p.project_1_text {
+  font-family: 'Abril Fatface';
+  font-size: 1.1rem;
+}
+
+div.project_1_video {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  top: 100%;
+}
+
+
+
+span.project_2_title {
+  font-family: Monoton;
+  font-size: 7rem;
+  color: #810D6E;
+}
+
+div.project_2_img {
+  position: absolute;
+  width: 53.5%;
+  height: 66.3%;
+  left: 0;
+  top: 40.8%;
+  background: url('img/kunst/rot3.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+div.project_2_block {
+  background: #000;
+  position: absolute;
+  width: 60.6%;
+  height: 30.4%;
+  left: 30.1%;
+  top: 25.4%;
+}
+
+span.project_2_text1 {
+  font-family: Orbitron;
+  font-size: 4rem;
+  color: #fff;
+  position: absolute;
+  width: 25.6%;
+  height: 31.5%;
+  left: 45%;
+  top: 20.3%;
+}
+
+p.project_2_text2 {
+  position: absolute;
+  width: 39%;
+  height: 30.3%;
+  left: 55%;
+  top: 62.4%;
+  font-family: Arapey;
+  font-size: 1.3rem;
+}
+
+article.project_2_2article {
+  position: absolute;
+  height: 100vh;
+  top: 100vh;
+  width: 97.5%;
+}
+
+p.project_2_2text {
+  position: absolute;
+  width: 15.1%;
+  height: 66.7%;
+  left: 5.2%;
+  top: 7.1%;
+  
+  font-family: IBM Plex Mono;
+  font-size: 1rem;
+
+}
+
+p.project_2_2text2 {
+  position: absolute;
+  width: 15.4%;
+  height: 63.1%;
+  left: 25.9%;
+  top: 31.6%;
+
+  font-family: IBM Plex Mono;
+  font-size: 1rem;
+}
+
+div.project_2_2block {
+  position: absolute;
+  width: 50.0%;
+  height: 100.0%;
+  left: 50.0%;
+  top: 0.0%;
+  background: #F66E34;
+}
+
+div.project_2_2img {
+  position: absolute;
+  width: 45.1%;
+  height: 75.5%;
+  left: 52.4%;
+  top: 14.0%;
+
+  background: url('img/kunst/rot1.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+article.project_2_3article {
+  position: absolute;
+  height: 100vh;
+  top: 200vh;
+  width: 97.5%;
+}
+
+div.project_2_3block {
+  position: absolute;
+  width: 50.8%;
+  height: 45.9%;
+  left: 7.1%;
+  top: 8.8%;
+  background: #BB49D8;
+}
+
+div.project_2_3img {
+  position: absolute;
+  width: 45.3%;
+  height: 64.7%;
+  left: 47.0%;
+  top: 26.9%;
+
+  background: url('img/kunst/rot2.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+p.project_2_3text {
+  position: absolute;
+  width: 44.8%;
+  height: 31.5%;
+  left: 13.2%;
+  top: 10.0%;
+  
+  font-family: Orbitron;
+  color: #FFFFFF;
+  font-size: 55px;
+}
+
+article.project_3_article {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  width: 100%;
+}
+
+span.project_3_title {
+  position: absolute;
+  width: 46.9%;
+  height: 37.8%;
+  left: 50.7%;
+  top: 9.8%;
+
+  font-family: Monoton;
+  font-size: 6rem;
+  color: #F66E34;
+}
+
+div.project_3_block {
+  position: absolute;
+  width: 51.2%;
+  height: 50.0%;
+  left: 48.8%;
+  top: 50.0%;
+
+  background: #111111;
+}
+
+p.project_3_text {
+  position: absolute;
+  width: 80%;
+  height: 50%;
+  left: 5.3%;
+  top: 6.0%;
+
+  font-family: Arapey;
+  color: #FFFFFF;
+  font-size: 24px;
+}
+
+div.project_3_img {
+  position: absolute;
+  width: 48.7%;
+  height: 100.0%;
+  left: 0.0%;
+  top: 0.0%;
+
+  background: url('img/kunst/gruen2-s.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+article.project_3_2article {
+  position: absolute;
+  height: 100%;
+  top: 100%;
+  width: 100%;
+}
+
+div.project_3_2block {
+  position: absolute;
+  width: 39.8%;
+  height: 81.3%;
+  left: 8.3%;
+  top: 19.4%;
+
+  background: #FFCA40;
+}
+
+div.project_3_2img {
+  position: absolute;
+  width: 28.5%;
+  height: 63.6%;
+  left: 15.9%;
+  top: 29.8%;
+
+  background: url('img/kunst/gruen1.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+div.project_3_3block {
+  position: absolute;
+  width: 36.0%;
+  height: 75.0%;
+  left: 56.7%;
+  top: 0.0%;
+
+  background: #5D2298;
+}
+
+div.project_3_3img {
+  position: absolute;
+  left: 60.09%;
+  right: 9.79%;
+  top: 10.46%;
+  bottom: 34.7%;
+
+  background: url('img/kunst/gruen3.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+p.project_3_2text {
+  position: absolute;
+  width: 47%;
+  height: 5%;
+  left: 8.3%;
+  top: 6.6%;
+  font-family: Arapey;
+  padding: 1rem;
+  color: #fff;
+  background: #111
+}
+
+p.project_3_3text {
+  position: absolute;
+  width: 43%;
+  height: 5%;
+  left: 48.1%;
+  top: 81.7%;
+  font-family: Arapey;
+  padding: 1rem;
+  color: #fff;
+  background: #111
+}
+
+article.project_4_article {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  width: 100%;
+}
+
+p.project_4_walltext {
+  position: absolute;
+  width: 74.0%;
+  height: 126.1%;
+  left: -10.6%;
+  top: -50.1%;
+
+  font-family: Abril Fatface;
+  font-size: 160px;
+  transform: rotate(-25.6deg);
+}
+
+div.project_4_block {
+  position: absolute;
+  width: 50.0%;
+  height: 100.0%;
+  left: 50.0%;
+  top: 0.0%;
+
+  background: #6C2160;
+}
+
+p.project_4_text {
+  position: absolute;
+  width: 17.5%;
+  height: 70.9%;
+  left: 17.8%;
+  top: 12.5%;
+
+  border: solid;
+  font-family: IBM Plex Mono;
+  font-size: 1.5rem;
+  padding: 1rem;
+  color: #111;
+  background: #fff
+}
+
+div.project_4_img {
+  position: absolute;
+  width: 39.7%;
+  height: 70.5%;
+  left: 55.1%;
+  top: 15.1%;
+
+  background: url('img/kunst/party1.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+article.project_4_2article {
+  position: absolute;
+  height: 110%;
+  top: 100%;
+  width: 100%;
+  background:  #111;
+}
+
+p.project_4_2text {
+  position: absolute;
+  width: 40%;
+  height: 55.6%;
+  left: 46.2%;
+  top: 7.6%;
+
+  font-family: IBM Plex Mono;
+  font-weight: bold;
+  color: #F66E34;
+  font-size: 1.3rem;
+}
+
+div.project_4_2img {
+  position: absolute;
+  width: 40.4%;
+  height: 58.1%;
+  left: 0;
+  top: 18.9%;
+
+  background: url('img/kunst/party4-s.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+div.project_4_2img2 {
+  position: absolute;
+  width: 38.8%;
+  height: 40.3%;
+  right: 2%;
+  bottom: 15%;
+
+  background: url('img/kunst/party2.jpg');
+  transform: rotate(-10deg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+article.project_4_3article {
+  position: absolute;
+  top: 210%;
+  height: 100vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url('img/kunst/party3-s.jpg');
+}
+
+div.project_4_3block {
+  position: absolute;
+  width: 27.3%;
+  height: 52.6%;
+  left: 9.7%;
+  top: 34.4%;
+
+  background: #fff;
+  mix-blend-mode: soft-light;
+}
+
+p.project_4_3text {
+  position: absolute;
+  width: 17.9%;
+  height: 38.9%;
+  left: 14.4%;
+  top: 30.3%;
+
+  color: #EF4C07;
+  font-family: Abril Fatface;
+  font-size: 6rem;
+}
+
+div.impressum_block {
+  position: absolute;
+  width: 100%;
+  height: 12.5%;
+  left: 0%;
+  top: 0%;
+  background: #111;
+}
+
+span.impressum_title {
+  position: absolute;
+  width: 32.1%;
+  height: 10.9%;
+  left: 33.9%;
+  top: 33.9%;
+
+  font-family: Abril Fatface;
+  font-size: 6rem;
+}
+
+p.impressum_text_l {
+  position: absolute;
+  width: 15.1%;
+  height: 13.8%;
+  left: 11.9%;
+  top: 52.3%;
+
+  font-family: Abril Fatface;
+  font-size: 2rem;
+  text-align: center;
+}
+
+p.impressum_text_m {
+  position: absolute;
+  width: 17.2%;
+  height: 12.0%;
+  left: 41.4%;
+  top: 54.1%;
+
+  font-family: IBM Plex Mono;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+p.impressum_text_r {
+  position: absolute;
+  width: 21.1%;
+  height: 9.1%;
+  left: 73.0%;
+  top: 54.7%;
+
+  font-family: Abril Fatface;
+  font-size: 2rem;
+  text-align: center;
+}
+
+article.project_5_article {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #000;
+}
+
+p.project_5_text {
+  position: absolute;
+  width: 96%;
+  height: 9%;
+  left: 0%;
+  bottom: 0%;
+
+  padding: 2%;
+  margin:0; 
+  background: #111;
+  font-family: Abril Fatface;
+  font-size: 3rem;
+  color: #fff
+}
+
+div.project_6_img {
+  position: absolute;
+  width: 50.0%;
+  height: 100%;
+  right: 0%;
+  top: 0.0%;
+
+  background: url('img/kunst/ball2.png');
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+span.project_6_title {
+  position: absolute;
+  width: 37.3%;
+  height: 19.3%;
+  left: 12.7%;
+  top: 6.5%;
+
+  font-family: Monoton;
+  font-size: 4rem;
+  color: #F420DF;
+}
+
+div.project_6_block {
+  position: absolute;
+  width: 45.3%;
+  height: 64.7%;
+  left: 5%;
+  top: 30.1%;
+  border: solid
+}
+
+p.project_6_text {
+  position: absolute;
+  top: 3%;
+  left: 4%;
+  bottom: 4%;
+  width: 44%;
+
+  font-family: Arapey;
+  font-size: 1.25rem;
+}
+
+p.project_6_text2 {
+  position: absolute;
+  top: 3%;
+  right: 4%;
+  bottom: 4%;
+  width: 44%;
+
+  font-family: Arapey;
+  font-size: 1.25rem;
+}
+
+a.map_1 {
+  background: #892929;
+
+  position: absolute;
+  width: 6.0%;
+  height: 71.0%;
+  left: 10.2%;
+  top: 2.4%;
+}
+
+a.map_2 {
+  background: #892929;
+
+  position: absolute;
+  width: 2.8%;
+  height: 32.4%;
+  left: 33.1%;
+  top: 26.9%;
+}
+
+a.map_3 {
+  background: #892929;
+
+  position: absolute;
+  width: 1.6%;
+  height: 21.2%;
+  left: 39.8%;
+  top: 34.2%;
+}
+
+a.map_4 {
+  background: #892929;
+
+  position: absolute;
+  width: 1.9%;
+  height: 20.6%;
+  left: 62.4%;
+  top: 34.1%;
+}
+
+a.map_5 {
+  background: #892929;
+
+  position: absolute;
+  width: 2.7%;
+  height: 32.5%;
+  left: 68.1%;
+  top: 26.8%;
+}
+
+a.map_6 {
+  background: #892929;
+
+  position: absolute;
+  width: 5.8%;
+  height: 71.7%;
+  left: 87.6%;
+  top: 1.7%;
+}
